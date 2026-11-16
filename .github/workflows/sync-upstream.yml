@@ -37,6 +37,14 @@ jobs:
       - name: Update img2threejs plugin
         run: bash scripts/sync-img2threejs.sh /tmp/upstream-img2threejs "$IMG2_TAG"
 
+      - name: Fetch upstream web-design-guidelines
+        run: |
+          git clone --depth 1 --filter=blob:none --sparse https://github.com/vercel-labs/agent-skills.git /tmp/upstream-vercel
+          git -C /tmp/upstream-vercel sparse-checkout set skills/web-design-guidelines
+
+      - name: Update web-design-guidelines plugin
+        run: bash scripts/sync-web-design-guidelines.sh /tmp/upstream-vercel
+
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
@@ -46,5 +54,5 @@ jobs:
             echo "No upstream changes"
             exit 0
           fi
-          git commit -m "Sync from upstream (taste-skill@$(cut -c1-7 .upstream-commit), imagegen-skills@$(cut -c1-7 .upstream-commit-imagegen), img2threejs@$(cut -d' ' -f1 .upstream-commit-img2threejs))"
+          git commit -m "Sync from upstream (taste-skill@$(cut -c1-7 .upstream-commit), imagegen-skills@$(cut -c1-7 .upstream-commit-imagegen), img2threejs@$(cut -d' ' -f1 .upstream-commit-img2threejs), web-design-guidelines@$(cut -c1-7 .upstream-commit-web-design-guidelines))"
           git push

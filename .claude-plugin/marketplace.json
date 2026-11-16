@@ -2,7 +2,7 @@
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "taste-skill-plugin",
   "metadata": {
-    "description": "Repackaged third-party skills (taste-skill, imagegen-skills, img2threejs) as Claude plugins, synced daily from the upstream repositories."
+    "description": "Repackaged third-party skills (taste-skill, imagegen-skills, img2threejs, web-design-guidelines) as Claude plugins, synced daily from the upstream repositories."
   },
   "owner": {
     "name": "FastCut"
@@ -60,6 +60,23 @@
         "3d",
         "image-to-3d",
         "webgl"
+      ]
+    },
+    {
+      "name": "web-design-guidelines",
+      "description": "web-design-guidelines by Vercel: review UI code for Web Interface Guidelines compliance (accessibility, UX, best practices). Fetches the latest rules on every review.",
+      "version": "1.0.0",
+      "author": {
+        "name": "vercel"
+      },
+      "source": "./web-design-guidelines",
+      "category": "design",
+      "homepage": "https://github.com/vercel-labs/agent-skills/tree/main/skills/web-design-guidelines",
+      "tags": [
+        "design",
+        "accessibility",
+        "ux",
+        "review"
       ]
     }
   ]
