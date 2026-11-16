@@ -1,0 +1,13 @@
+{
+  "name": "imagegen-skills",
+  "description": "Design image-generation skills by Leonxlnx: website comps, mobile app screens, brand kits and an image-first website pipeline (imagegen-frontend-web, imagegen-frontend-mobile, brandkit, image-to-code).",
+  "version": "1.0.0",
+  "author": {
+    "name": "leonxlnx",
+    "email": "hello@tasteskill.dev"
+  },
+  "homepage": "https://github.com/Leonxlnx/imagegen-skills",
+  "repository": "https://github.com/Leonxlnx/imagegen-skills",
+  "license": "MIT",
+  "skills": "./skills/"
+}

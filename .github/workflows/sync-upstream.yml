@@ -1,4 +1,4 @@
-name: Sync from Leonxlnx/taste-skill
+name: Sync from Leonxlnx upstream repositories
 
 on:
   schedule:
@@ -19,8 +19,14 @@ jobs:
           git clone --depth 1 --filter=blob:none --sparse https://github.com/Leonxlnx/taste-skill.git /tmp/upstream
           git -C /tmp/upstream sparse-checkout set --no-cone /skills/taste-skill/ /.claude-plugin/marketplace.json /LICENSE
 
-      - name: Update plugin
+      - name: Update taste-skill plugin
         run: bash scripts/sync-upstream.sh /tmp/upstream
+
+      - name: Fetch upstream imagegen-skills
+        run: git clone --depth 1 https://github.com/Leonxlnx/imagegen-skills.git /tmp/upstream-imagegen
+
+      - name: Update imagegen-skills plugin
+        run: bash scripts/sync-imagegen.sh /tmp/upstream-imagegen
 
       - name: Commit if changed
         run: |
@@ -31,5 +37,5 @@ jobs:
             echo "No upstream changes"
             exit 0
           fi
-          git commit -m "Sync design-taste-frontend from Leonxlnx/taste-skill@$(cut -c1-7 .upstream-commit)"
+          git commit -m "Sync from upstream (taste-skill@$(cut -c1-7 .upstream-commit), imagegen-skills@$(cut -c1-7 .upstream-commit-imagegen))"
           git push
