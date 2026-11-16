@@ -28,6 +28,15 @@ jobs:
       - name: Update imagegen-skills plugin
         run: bash scripts/sync-imagegen.sh /tmp/upstream-imagegen
 
+      - name: Fetch latest stable img2threejs release
+        run: |
+          TAG=$(git ls-remote --tags --refs https://github.com/img2threejs/img2threejs.git 'v*' | sed 's#.*/##' | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | sort -V | tail -1)
+          echo "IMG2_TAG=$TAG" >> "$GITHUB_ENV"
+          git clone --depth 1 --branch "$TAG" https://github.com/img2threejs/img2threejs.git /tmp/upstream-img2threejs
+
+      - name: Update img2threejs plugin
+        run: bash scripts/sync-img2threejs.sh /tmp/upstream-img2threejs "$IMG2_TAG"
+
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
@@ -37,5 +46,5 @@ jobs:
             echo "No upstream changes"
             exit 0
           fi
-          git commit -m "Sync from upstream (taste-skill@$(cut -c1-7 .upstream-commit), imagegen-skills@$(cut -c1-7 .upstream-commit-imagegen))"
+          git commit -m "Sync from upstream (taste-skill@$(cut -c1-7 .upstream-commit), imagegen-skills@$(cut -c1-7 .upstream-commit-imagegen), img2threejs@$(cut -d' ' -f1 .upstream-commit-img2threejs))"
           git push

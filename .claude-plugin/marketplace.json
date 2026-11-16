@@ -2,7 +2,7 @@
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "taste-skill-plugin",
   "metadata": {
-    "description": "Repackaged Leonxlnx skills (taste-skill, imagegen-skills) as Claude plugins, synced daily from the upstream repositories."
+    "description": "Repackaged third-party skills (taste-skill, imagegen-skills, img2threejs) as Claude plugins, synced daily from the upstream repositories."
   },
   "owner": {
     "name": "FastCut"
@@ -43,6 +43,23 @@
         "image-generation",
         "frontend",
         "branding"
+      ]
+    },
+    {
+      "name": "img2threejs",
+      "description": "img2threejs: turn an object or character reference image into a quality-gated, animation-ready procedural Three.js model built in code.",
+      "version": "2.0.1",
+      "author": {
+        "name": "img2threejs"
+      },
+      "source": "./img2threejs",
+      "category": "design",
+      "homepage": "https://github.com/img2threejs/img2threejs",
+      "tags": [
+        "threejs",
+        "3d",
+        "image-to-3d",
+        "webgl"
       ]
     }
   ]

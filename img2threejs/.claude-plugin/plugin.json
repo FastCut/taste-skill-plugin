@@ -1,0 +1,12 @@
+{
+  "name": "img2threejs",
+  "description": "img2threejs by img2threejs: turn an object or character reference image into a quality-gated, animation-ready procedural Three.js model built in code.",
+  "version": "2.0.1",
+  "author": {
+    "name": "img2threejs"
+  },
+  "homepage": "https://github.com/img2threejs/img2threejs",
+  "repository": "https://github.com/img2threejs/img2threejs",
+  "license": "Apache-2.0",
+  "skills": "./skills/"
+}
