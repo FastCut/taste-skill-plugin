@@ -8,8 +8,9 @@ Third-party skills, repackaged as a Claude plugin marketplace so they can be add
 | `imagegen-skills` | `imagegen/` | [Leonxlnx/imagegen-skills](https://github.com/Leonxlnx/imagegen-skills) | imagegen-frontend-web, imagegen-frontend-mobile, brandkit, image-to-code |
 | `img2threejs` | `img2threejs/` | [img2threejs/img2threejs](https://github.com/img2threejs/img2threejs) (latest stable release) | img2threejs |
 | `web-design-guidelines` | `web-design-guidelines/` | [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills/tree/main/skills/web-design-guidelines) | web-design-guidelines |
+| `rampstack-brand` | `brand/` | [rampstackco/claude-skills](https://github.com/rampstackco/claude-skills) (selected skills) | brand-discovery, brand-ideation, brand-archetype-system, brand-identity, logo-design, brand-style-guide, brand-voice |
 
-Skill content belongs to its authors: taste-skill and imagegen-skills by Leonxlnx (MIT, see `LICENSE` and `imagegen/LICENSE`), img2threejs by img2threejs (Apache-2.0, see `img2threejs/LICENSE`), web-design-guidelines by Vercel (MIT, as stated in the vercel-labs/agent-skills README). Nothing in the skills is changed.
+Skill content belongs to its authors: taste-skill and imagegen-skills by Leonxlnx (MIT, see `LICENSE` and `imagegen/LICENSE`), img2threejs by img2threejs (Apache-2.0, see `img2threejs/LICENSE`), web-design-guidelines by Vercel (MIT, as stated in the vercel-labs/agent-skills README), brand skills by RampStack (MIT, see `brand/LICENSE`). Nothing in the skills is changed.
 
 ## Updates
 
@@ -18,4 +19,4 @@ A GitHub Action (`.github/workflows/sync-upstream.yml`) runs daily, copies the l
 ## Install
 
 - Claude (chat and Claude Code via account sync): Customize → Plugins → Add → Add marketplace → `FastCut/taste-skill-plugin`, with Sync automatically on, then install the plugins.
-- Claude Code CLI: `/plugin marketplace add FastCut/taste-skill-plugin`, then `/plugin install taste-skill@taste-skill-plugin`, `/plugin install imagegen-skills@taste-skill-plugin`, `/plugin install img2threejs@taste-skill-plugin` and `/plugin install web-design-guidelines@taste-skill-plugin`. img2threejs needs Python 3.10+ (stdlib only) on the machine that runs it.
+- Claude Code CLI: `/plugin marketplace add FastCut/taste-skill-plugin`, then `/plugin install taste-skill@taste-skill-plugin`, `/plugin install imagegen-skills@taste-skill-plugin`, `/plugin install img2threejs@taste-skill-plugin`, `/plugin install web-design-guidelines@taste-skill-plugin` and `/plugin install rampstack-brand@taste-skill-plugin`. img2threejs needs Python 3.10+ (stdlib only) on the machine that runs it.
