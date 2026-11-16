@@ -1,0 +1,31 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "taste-skill-plugin",
+  "metadata": {
+    "description": "Repackaged Leonxlnx/taste-skill (design-taste-frontend) as a Claude plugin, synced daily from the upstream repository."
+  },
+  "owner": {
+    "name": "FastCut"
+  },
+  "plugins": [
+    {
+      "name": "taste-skill",
+      "description": "tasteskill: the anti-slop frontend skill by Leonxlnx (design-taste-frontend). Professional company websites with one system, real photographs and a real-browser checker.",
+      "version": "2.5.1",
+      "author": {
+        "name": "leonxlnx",
+        "email": "hello@tasteskill.dev"
+      },
+      "source": "./plugin",
+      "category": "design",
+      "homepage": "https://github.com/Leonxlnx/taste-skill",
+      "tags": [
+        "design",
+        "frontend",
+        "ui",
+        "taste",
+        "websites"
+      ]
+    }
+  ]
+}
